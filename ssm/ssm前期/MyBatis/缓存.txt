@@ -1,0 +1,8 @@
+MyBatis的全局cache配置
+<settings>    <setting name="cacheEnabled" value="true"/></settings>
+
+在Mapper XML文件中设置缓存，默认情况下是没有开启缓存的
+<cache eviction="FIFO" flushInterval="60000"         size="512" readOnly="true"/>
+
+在Mapper XML文件配置支持cache后，如果需要对个别查询进行调整，可以单独设置cache
+<select id="selectAll" resultType="Emp"         useCache="true">
